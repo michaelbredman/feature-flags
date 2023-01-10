@@ -13,7 +13,7 @@ spec:
         app: test-app-ff
     spec:
       containers:
-      - name: test-app-ff
+      - name: nxginx
         image: docker.io/mredman/harness-ff-sko:latest
         imagePullPolicy: Always
         resources:
