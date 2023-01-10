@@ -29,7 +29,7 @@ metadata:
   name: harness-ff-service
 spec:
   selector:
-    app: test-app-ff
+    app: ff-app-deployment
   ports:
   - name: http
     port: 3001
