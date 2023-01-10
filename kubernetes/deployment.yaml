@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ff-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test-app-ff
+  template:
+    metadata:
+      labels:
+        app: test-app-ff
+    spec:
+      containers:
+      - name: test-app-ff
+        image: docker.io/mredman/harness-ff-sko:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: harness-ff-service
+spec:
+  selector:
+    app: test-app-ff
+  ports:
+  - name: http
+    port: 3001
+    targetPort: 3000
+  type: LoadBalancer
