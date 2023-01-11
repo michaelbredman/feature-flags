@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nxginx
-        image: docker.io/mredman/harness-ff-sko:latest
+        image: docker.io/mredman/harness-ff-sko:{{.Values.image}}
         imagePullPolicy: Always
         resources:
           limits:
