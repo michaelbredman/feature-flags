@@ -1,1 +1,1 @@
-image: <+pipline.sequenceId>
+image: <+pipeline.sequenceId>
