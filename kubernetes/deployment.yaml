@@ -28,6 +28,19 @@ kind: Service
 metadata:
   name: harness-ff-service
 spec:
+  type: ClusterIP
+  selector:
+    app: ff-app-deployment
+  ports:
+  - name: http
+    port: 3000
+    targetPort: 3000        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: harness-ff-service-external
+spec:
   selector:
     app: ff-app-deployment
   ports:
