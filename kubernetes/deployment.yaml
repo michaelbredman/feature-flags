@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ff-app-deployment
+  name: frontend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: test-app-ff
+      app: frontend
   template:
     metadata:
       labels:
-        app: test-app-ff
+        app: frontend
     spec:
       containers:
       - name: nxginx
@@ -26,11 +26,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: harness-ff-service
+  name: frontend
 spec:
   type: ClusterIP
   selector:
-    app: ff-app-deployment
+    app: frontend
   ports:
   - name: http
     port: 3001
@@ -39,13 +39,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: harness-ff-service-external
+  name: frontend-external
 spec:
+  type: LoadBalancer
   selector:
-    app: ff-app-deployment
+    app: frontend
   ports:
   - name: http
     port: 3001
     targetPort: 3000
-    protocol: TCP
-  type: LoadBalancer
