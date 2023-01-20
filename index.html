@@ -47,7 +47,7 @@
       function enableModules() {
         enableModule("builds", cf.variation('Builds_Module',false));
         enableModule("feature-flags", cf.variation('Feature_Flag',false));
-        enableModule("cloud-cost-management", true);
+        enableModule("cloud-cost-management", cf.variation('Cost_Mod',false);
         enableModule("continuous-verification", true);
       }
 
