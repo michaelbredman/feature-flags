@@ -27,9 +27,9 @@
       // FF Init
       var initialize = HarnessFFSDK.initialize
       var Event = HarnessFFSDK.Event
-
+      // Need to add the Harness API KEY as part of init
       var cf = initialize(
-        'HARNESS_API_KEY',
+        'f91472ad-12ca-4d8b-9956-dfe2fecf7d55',
         {
           identifier: email,
           attributes: {
@@ -43,11 +43,11 @@
       });
       
       // THESE FUNCTIONS ENABLE OR DISABLE EACH MODULE
-      // cf.variation('Builds_Module',false)
+      // cf.variation('feature_flag_module',true)
       enableModules();
       function enableModules() {
         enableModule("builds", true);
-        enableModule("feature-flags", true);
+        enableModule("feature-flags", cf.variation('feature_flag_module',true));
         enableModule("cloud-cost-management", true);
         enableModule("continuous-verification", true);
       }
