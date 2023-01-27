@@ -29,7 +29,7 @@
       var Event = HarnessFFSDK.Event
       // Need to add the Harness API KEY as part of init
       var cf = initialize(
-        'f9514e5a-a45b-491a-9571-fbd737ffcc1f',
+        'API',
         {
           identifier: email,
           attributes: {
@@ -47,8 +47,8 @@
       enableModules();
       function enableModules() {
         enableModule("builds", true);
-        enableModule("feature-flags", cf.variation('feature_flag_module',true));
-        enableModule("cloud-cost-management", cf.variation('CCM_Module',false));
+        enableModule("feature-flags", true);
+        enableModule("cloud-cost-management", true);
         enableModule("continuous-verification", true);
       }
 
