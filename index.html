@@ -23,7 +23,7 @@
   <script>
     $(function() {
       var email = login();
-      
+      CCM_Module
       // FF Init
       var initialize = HarnessFFSDK.initialize
       var Event = HarnessFFSDK.Event
@@ -48,7 +48,7 @@
       function enableModules() {
         enableModule("builds", true);
         enableModule("feature-flags", cf.variation('feature_flag_module',true));
-        enableModule("cloud-cost-management", true);
+        enableModule("cloud-cost-management", cf.variation('CCM_Module',false));
         enableModule("continuous-verification", true);
       }
 
