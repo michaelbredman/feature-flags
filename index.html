@@ -29,7 +29,7 @@
       var Event = HarnessFFSDK.Event
 
       var cf = initialize(
-        '543bc18f-8889-4d29-8b87-75add1cd1165',
+        'eec08f29-d3cb-4f1d-ae14-e6a2433816d9',
         {
           identifier: email,
           attributes: {
@@ -47,7 +47,7 @@
       enableModules();
       function enableModules() {
         enableModule("builds", true);
-        enableModule("feature-flags", true);
+        enableModule("feature-flags", cf.variation('feature_flag_module',false));
         enableModule("cloud-cost-management", true);
         enableModule("continuous-verification", true);
       }
@@ -171,7 +171,7 @@
       <div class="page-header">
         <div class="page-header-main">
           <div class="breadcrumb-links"><a href="index.html">Manage Projects</a><span>/</span></div>
-          <h1>Demo</h1>
+          <h1>Example Applcation for ProfPoint</h1>
         </div>
         <div class="page-header-actions">
           <div>Welcome, <strong class="email">admin@harness.io</strong>! 
