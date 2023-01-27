@@ -43,11 +43,12 @@
       });
       
       // THESE FUNCTIONS ENABLE OR DISABLE EACH MODULE
+      // cf.variation('Builds_Module',false)
       enableModules();
       function enableModules() {
-        enableModule("builds", cf.variation('Builds_Module',false));
-        enableModule("feature-flags", cf.variation('Feature_Flag',false));
-        enableModule("cloud-cost-management", cf.variation('Cost_Mod',false));
+        enableModule("builds", true);
+        enableModule("feature-flags", true);
+        enableModule("cloud-cost-management", true);
         enableModule("continuous-verification", true);
       }
 
